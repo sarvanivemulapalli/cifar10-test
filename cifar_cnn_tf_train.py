@@ -2,6 +2,7 @@ import tensorflow as tf
 
 from tensorflow.keras import datasets, layers, models
 import argparse
+from mlflow import log_metric
 
 
 (train_images, train_labels), (test_images, test_labels) = datasets.cifar10.load_data()
@@ -52,4 +53,8 @@ model.fit(train_images, train_labels,
 score = model.evaluate(test_images, test_labels, verbose=0)
 print('test_loss:', score[0])
 print('test_accuracy:', score[1])
+
+log_metric('test_loss:', score[0])
+log_metric('test_accuracy:', score[1])
+
 model.save('model.h5')
