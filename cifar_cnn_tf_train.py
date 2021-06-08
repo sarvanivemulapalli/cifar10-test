@@ -13,7 +13,7 @@ class_names = ['airplane', 'automobile', 'bird', 'cat', 'deer',
                'dog', 'frog', 'horse', 'ship', 'truck']
 
 parser = argparse.ArgumentParser(description='Running CNN to classify CIFAR10')
-parser.add_argument('--epochs', help='number of epochs to run', default='12')
+parser.add_argument('--epochs', help='number of epochs to run', default='1')
 parser.add_argument('--batch_size', help='iteration batch size', default='128')
 args = parser.parse_args()
 
